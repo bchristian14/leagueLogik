@@ -29,6 +29,27 @@ Golf League Management Web Application for a 100-member league designed to repla
 - API proxied by nginx: `yourdomain.com/api/*` → FastAPI backend
 - Database: PostgreSQL on same instance
 
+## Development Roadmap Integration
+
+**CRITICAL: Always check current roadmap status before starting work**
+- Primary roadmap: `/docs/development_roadmap.md`
+- Current phase tracking in roadmap header
+- Use Plan Re-evaluation template before major changes: `/docs/templates/plan_reevaluation.md`
+
+**Before any development task:**
+1. **Check Current Phase**: Review roadmap to identify current phase (P###) and status
+2. **Identify Next Task**: Follow sequential task numbering (T###) within current phase
+3. **Follow Success Criteria**: Each task has specific success criteria that must be met
+4. **Update Progress**: Mark tasks complete in roadmap and update phase status
+5. **Validate Dependencies**: Ensure prerequisite tasks/phases are complete before proceeding
+
+**Task Numbering System:**
+- Major Phases: P100, P200, P300... (insert P150 for new phase between P100-P200)
+- Features: F110, F120, F130... (insert F115 for new feature between F110-F120)
+- Tasks: T111, T112, T113... (insert T111.5 for new task between T111-T112)
+
+**Never skip phases or tasks** - the roadmap ensures proper dependency management and systematic progress.
+
 ## Development Commands - CRITICAL
 
 **MANDATORY: ALWAYS start with directory awareness:**
