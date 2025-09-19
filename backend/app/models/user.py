@@ -7,38 +7,30 @@ Supports complete member lifecycle management including signup, status changes,
 and financial tracking.
 """
 
+import enum
 import uuid
 from datetime import date, datetime
 from decimal import Decimal
 from typing import Optional
 
-from sqlalchemy import (
-    DECIMAL,
-    Boolean,
-    DateTime,
-    Date,
-    Enum,
-    String,
-    Text,
-    Index,
-    CheckConstraint,
-    func
-)
+from sqlalchemy import (DECIMAL, Boolean, CheckConstraint, Date, DateTime,
+                        Enum, Index, String, Text, func)
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.database import Base
-import enum
 
 
 class MemberStatus(str, enum.Enum):
     """Member status enumeration for golf league members."""
+
     ACTIVE = "active"
     INACTIVE = "inactive"
 
 
 class MemberType(str, enum.Enum):
     """Member type enumeration for different membership levels."""
+
     CANDIDATE = "candidate"
     FULL = "full"
     LIFETIME = "lifetime"
@@ -46,6 +38,7 @@ class MemberType(str, enum.Enum):
 
 class AdminRole(str, enum.Enum):
     """Administrative role enumeration for member permissions."""
+
     ADMIN = "admin"
     TREASURER = "treasurer"
     COURSE_COORDINATOR = "course_coordinator"
@@ -95,7 +88,7 @@ class User(Base):
         primary_key=True,
         default=uuid.uuid4,
         index=True,
-        doc="Primary key UUID for the member"
+        doc="Primary key UUID for the member",
     )
 
     # Authentication fields
@@ -104,38 +97,30 @@ class User(Base):
         unique=True,
         nullable=False,
         index=True,
-        doc="Unique email address for login and communication"
+        doc="Unique email address for login and communication",
     )
 
     password_hash: Mapped[str] = mapped_column(
-        String(255),
-        nullable=False,
-        doc="Hashed password for authentication"
+        String(255), nullable=False, doc="Hashed password for authentication"
     )
 
     # Profile information
     first_name: Mapped[str] = mapped_column(
-        String(100),
-        nullable=False,
-        doc="Member's first name"
+        String(100), nullable=False, doc="Member's first name"
     )
 
     last_name: Mapped[str] = mapped_column(
-        String(100),
-        nullable=False,
-        doc="Member's last name"
+        String(100), nullable=False, doc="Member's last name"
     )
 
     phone_number: Mapped[Optional[str]] = mapped_column(
-        String(20),
-        nullable=True,
-        doc="Optional contact phone number"
+        String(20), nullable=True, doc="Optional contact phone number"
     )
 
     date_of_birth: Mapped[Optional[date]] = mapped_column(
         Date,
         nullable=True,
-        doc="Optional birth date (used for forward and 75+ tee eligibility)"
+        doc="Optional birth date (used for forward and 75+ tee eligibility)",
     )
 
     # Membership information
@@ -144,7 +129,7 @@ class User(Base):
         nullable=False,
         default=MemberStatus.ACTIVE,
         index=True,
-        doc="Current membership status (active/inactive)"
+        doc="Current membership status (active/inactive)",
     )
 
     member_type: Mapped[MemberType] = mapped_column(
@@ -152,13 +137,13 @@ class User(Base):
         nullable=False,
         default=MemberType.CANDIDATE,
         index=True,
-        doc="Type of membership (candidate/full/lifetime)"
+        doc="Type of membership (candidate/full/lifetime)",
     )
 
     admin_roles: Mapped[Optional[AdminRole]] = mapped_column(
         Enum(AdminRole),
         nullable=True,
-        doc="Optional administrative role for permissions"
+        doc="Optional administrative role for permissions",
     )
 
     # Golf-specific information
@@ -167,15 +152,15 @@ class User(Base):
         nullable=True,
         unique=True,
         index=True,
-        doc="Golf Handicap and Information Network ID"
+        doc="Golf Handicap and Information Network ID",
     )
 
     # Financial information
     member_balance: Mapped[Decimal] = mapped_column(
         DECIMAL(10, 2),
         nullable=False,
-        default=Decimal('0.00'),
-        doc="Current account balance for fees and prizes"
+        default=Decimal("0.00"),
+        doc="Current account balance for fees and prizes",
     )
 
     # Important dates
@@ -183,13 +168,11 @@ class User(Base):
         Date,
         nullable=False,
         default=func.current_date(),
-        doc="Date when member joined the league"
+        doc="Date when member joined the league",
     )
 
     AGA_membership_expiry: Mapped[Optional[date]] = mapped_column(
-        Date,
-        nullable=True,
-        doc="American Golf Association membership expiry date"
+        Date, nullable=True, doc="American Golf Association membership expiry date"
     )
 
     # Audit timestamps
@@ -197,7 +180,7 @@ class User(Base):
         DateTime(timezone=True),
         nullable=False,
         default=func.now(),
-        doc="Timestamp when record was created"
+        doc="Timestamp when record was created",
     )
 
     updated_at: Mapped[datetime] = mapped_column(
@@ -205,28 +188,23 @@ class User(Base):
         nullable=False,
         default=func.now(),
         onupdate=func.now(),
-        doc="Timestamp when record was last updated"
+        doc="Timestamp when record was last updated",
     )
 
     # Table constraints
     __table_args__ = (
         # Business rule: Member balance cannot go below -$500 (credit limit)
-        CheckConstraint(
-            'member_balance >= -500.00',
-            name='check_member_balance_limit'
-        ),
-
+        CheckConstraint("member_balance >= -500.00", name="check_member_balance_limit"),
         # Performance indexes for common queries
-        Index('idx_users_email', 'email'),
-        Index('idx_users_member_status', 'member_status'),
-        Index('idx_users_member_type', 'member_type'),
-        Index('idx_users_GHIN_id', 'GHIN_id'),
-        Index('idx_users_signup_date', 'signup_date'),
-        Index('idx_users_created_at', 'created_at'),
-
+        Index("idx_users_email", "email"),
+        Index("idx_users_member_status", "member_status"),
+        Index("idx_users_member_type", "member_type"),
+        Index("idx_users_GHIN_id", "GHIN_id"),
+        Index("idx_users_signup_date", "signup_date"),
+        Index("idx_users_created_at", "created_at"),
         # Composite indexes for common query patterns
-        Index('idx_users_status_type', 'member_status', 'member_type'),
-        Index('idx_users_name_search', 'last_name', 'first_name'),
+        Index("idx_users_status_type", "member_status", "member_type"),
+        Index("idx_users_name_search", "last_name", "first_name"),
     )
 
     def __repr__(self) -> str:
@@ -257,10 +235,10 @@ class User(Base):
     @property
     def can_participate(self) -> bool:
         """Check if member can participate in tournaments."""
-        return (
-            self.member_status == MemberStatus.ACTIVE and
-            self.member_type in [MemberType.FULL, MemberType.LIFETIME]
-        )
+        return self.member_status == MemberStatus.ACTIVE and self.member_type in [
+            MemberType.FULL,
+            MemberType.LIFETIME,
+        ]
 
     @property
     def is_senior_eligible(self) -> bool:
@@ -269,11 +247,15 @@ class User(Base):
             return False
 
         from datetime import date
+
         today = date.today()
         age = today.year - self.date_of_birth.year
 
         # Adjust if birthday hasn't occurred this year
-        if (today.month, today.day) < (self.date_of_birth.month, self.date_of_birth.day):
+        if (today.month, today.day) < (
+            self.date_of_birth.month,
+            self.date_of_birth.day,
+        ):
             age -= 1
 
         return age >= 75

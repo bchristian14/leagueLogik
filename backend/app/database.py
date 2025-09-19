@@ -6,10 +6,12 @@ and base model configuration for the application.
 """
 
 from typing import AsyncGenerator, Generator
+
 from sqlalchemy import create_engine
+from sqlalchemy.ext.asyncio import (AsyncSession, async_sessionmaker,
+                                    create_async_engine)
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, Session
-from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
+from sqlalchemy.orm import Session, sessionmaker
 
 from app.core.settings import settings
 
@@ -17,16 +19,12 @@ from app.core.settings import settings
 engine = create_engine(
     settings.database_url,
     pool_pre_ping=True,  # Enable connection health checks
-    pool_recycle=300,    # Recycle connections every 5 minutes
-    echo=settings.debug  # Log SQL queries in debug mode
+    pool_recycle=300,  # Recycle connections every 5 minutes
+    echo=settings.debug,  # Log SQL queries in debug mode
 )
 
 # Create session factory for synchronous operations
-SessionLocal = sessionmaker(
-    autocommit=False,
-    autoflush=False,
-    bind=engine
-)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Create declarative base for model definitions
 Base = declarative_base()
@@ -74,6 +72,7 @@ def test_connection() -> bool:
     """
     try:
         from sqlalchemy import text
+
         with engine.connect() as connection:
             connection.execute(text("SELECT 1"))
         return True
