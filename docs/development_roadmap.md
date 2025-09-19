@@ -1,5 +1,5 @@
 # Golf League Management - Development Roadmap
-*Version: 1.5 | Last Updated: 2025-09-18*
+*Version: 1.6 | Last Updated: 2025-09-19*
 
 ## Roadmap Structure & Modification Guide
 
@@ -253,6 +253,61 @@ users table schema:
 - [ ] Token expiration handled gracefully
 - [ ] Protected routes working
 - [ ] State management optimized
+
+#### T132.5: Frontend Testing Framework Setup
+**Deliverable:** Complete frontend testing infrastructure
+- Configure Vitest as test runner for React/TypeScript
+- Install and configure @testing-library/react for component testing
+- Setup jsdom environment for DOM testing
+- Configure test scripts in package.json (test, test:watch, test:coverage)
+- Create test utilities and setup files
+**Workflow:**
+- [ ] Pre-Task Evaluation completed
+- [ ] Implementation completed (use `frontend-react-specialist` agent)
+- [ ] Post-Task Validation completed (coverage and test execution verified)
+**Success Criteria:**
+- [ ] Vitest running tests successfully
+- [ ] @testing-library/react configured for component testing
+- [ ] Test scripts working (npm run test, npm run test:watch)
+- [ ] Coverage reporting functional with minimum 80% threshold
+- [ ] Test utilities and setup files ready for use
+
+#### T132.7: Backend Authentication API Tests
+**Deliverable:** Comprehensive backend authentication test suite
+- Unit tests for JWT token utilities (/app/utils/auth.py)
+- Integration tests for authentication API endpoints (/app/api/v1/auth.py)
+- Tests for API dependencies and role-based access (/app/api/dependencies.py)
+- Password change and token refresh endpoint tests
+- Account lockout and security feature tests
+**Workflow:**
+- [ ] Pre-Task Evaluation completed
+- [ ] Implementation completed (use `fastapi-backend-specialist` agent)
+- [ ] Post-Task Validation completed (coverage and test execution verified)
+**Success Criteria:**
+- [ ] >90% test coverage for authentication modules
+- [ ] All authentication API endpoints tested (login, logout, refresh, me, change-password)
+- [ ] JWT token lifecycle tests (creation, validation, expiration, refresh)
+- [ ] Role-based access control tests for all permission patterns
+- [ ] Security tests (account lockout, failed attempts, password validation)
+
+#### T132.9: Frontend Authentication Tests
+**Deliverable:** Complete frontend authentication test coverage
+- Unit tests for useAuth hook (/frontend/src/hooks/useAuth.ts)
+- Tests for token storage utilities (/frontend/src/lib/auth.ts)
+- API client integration tests (/frontend/src/lib/api.ts)
+- Component tests for LoginPage (/frontend/src/pages/LoginPage.tsx)
+- Route protection tests (ProtectedRoute component)
+**Workflow:**
+- [ ] Pre-Task Evaluation completed
+- [ ] Implementation completed (use `frontend-react-specialist` agent)
+- [ ] Post-Task Validation completed (coverage and test execution verified)
+**Success Criteria:**
+- [ ] >85% test coverage for authentication modules
+- [ ] useAuth hook tested (login, logout, state management, error handling)
+- [ ] Token storage tested (get, set, remove, expiration validation)
+- [ ] API client tested (token attachment, refresh interceptors, error mapping)
+- [ ] LoginPage component tested (form validation, submission, error display)
+- [ ] Route protection tested (authentication checks, role-based access, redirects)
 
 #### T133: Admin Dashboard Shell
 **Deliverable:** Basic admin interface
@@ -1585,6 +1640,7 @@ For final deployment:
 | 1.3 | 2025-09-18 | Major task complexity reduction: Split overly complex tasks into minimum testable deliverables across all phases. Split T221, T422, T512, T523, T712, T721, T722, T911, T913 into focused sub-tasks using .5 and .7 numbering convention | Ben Christian |
 | 1.4 | 2025-09-18 | Added workflow adherence framework: Created /docs/templates/ directory with workflow templates (plan_reevaluation.md, pre_task_evaluation.md, post_task_validation.md, workflow_checklist.md); Added workflow validation sections to critical tasks (T113, T121-T123, T131-T132) | Claude Code |
 | 1.5 | 2025-09-18 | Complete workflow validation implementation: Added **Workflow** sections to ALL 63 tasks in roadmap; Included Architecture Review requirements for database/deployment tasks; Enhanced roadmap with comprehensive workflow adherence guidelines and template references | Claude Code |
+| 1.6 | 2025-09-19 | Added comprehensive testing tasks: T132.5 (Frontend Testing Framework Setup), T132.7 (Backend Authentication API Tests), T132.9 (Frontend Authentication Tests); Inserted between T132-T133 to ensure test coverage before dashboard implementation; Used simplified workflow for testing tasks | Claude Code |
 
 ---
 
