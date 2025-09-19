@@ -8,6 +8,9 @@ for the Golf League Management System.
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api.v1.api import api_router
+from app.core.settings import settings
+
 # Create FastAPI application instance
 app = FastAPI(
     title="Golf League Management API",
@@ -19,14 +22,16 @@ app = FastAPI(
 )
 
 # Configure CORS for development
-# TODO: Update origins for production deployment
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Vite dev server
+    allow_origins=settings.allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include API routers
+app.include_router(api_router, prefix="/api")
 
 
 @app.get("/api/v1/health")

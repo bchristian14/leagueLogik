@@ -191,6 +191,19 @@ class User(Base):
         doc="Timestamp when record was last updated",
     )
 
+    # Security fields for account lockout
+    failed_login_attempts: Mapped[int] = mapped_column(
+        nullable=False,
+        default=0,
+        doc="Number of consecutive failed login attempts",
+    )
+
+    locked_until: Mapped[Optional[datetime]] = mapped_column(
+        DateTime(timezone=True),
+        nullable=True,
+        doc="Account lockout expiration time (null if not locked)",
+    )
+
     # Table constraints
     __table_args__ = (
         # Business rule: Member balance cannot go below -$500 (credit limit)
@@ -230,7 +243,11 @@ class User(Base):
     @property
     def is_admin(self) -> bool:
         """Check if member has any administrative role."""
-        return self.admin_roles is not None
+        # Import here to avoid circular imports
+        from app.api.dependencies import get_user_roles
+
+        user_roles = get_user_roles(self)
+        return len(user_roles) > 0
 
     @property
     def can_participate(self) -> bool:
@@ -271,3 +288,26 @@ class User(Base):
             return "Significant Debit"
         else:
             return "Critical Debit"
+
+    @property
+    def is_locked(self) -> bool:
+        """Check if account is currently locked."""
+        if not self.locked_until:
+            return False
+
+        from datetime import datetime, timezone
+        return datetime.now(timezone.utc) < self.locked_until
+
+    def reset_failed_attempts(self) -> None:
+        """Reset failed login attempts counter."""
+        self.failed_login_attempts = 0
+        self.locked_until = None
+
+    def increment_failed_attempts(self) -> None:
+        """Increment failed login attempts and lock if threshold reached."""
+        self.failed_login_attempts += 1
+
+        # Lock account after 5 failed attempts for 15 minutes
+        if self.failed_login_attempts >= 5:
+            from datetime import datetime, timezone, timedelta
+            self.locked_until = datetime.now(timezone.utc) + timedelta(minutes=15)

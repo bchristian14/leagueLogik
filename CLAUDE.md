@@ -315,6 +315,11 @@ leagueLogik/
 - Error boundaries for error handling
 - Accessibility standards followed
 
+## Role-Based Access Control
+
+For implementing endpoint permissions and role-based access patterns, see:
+**Documentation**: `/docs/architecture/role_based_access_patterns.md`
+
 ## Commit Standards
 
 ### Commit Message Format

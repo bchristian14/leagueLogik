@@ -157,23 +157,23 @@ users table schema:
 - [x] Password change working
 - [x] Security measures active
 
-#### T123: Core Role System Implementation
+#### T123: Core Role System Implementation ✅ COMPLETE
 **Deliverable:** Flexible role-based permission foundation
 - `get_user_roles(user)` function returning set of user's roles
 - `require_roles(*roles)` dependency factory for endpoint protection
 - Role inheritance logic (admin inherits all other roles)
 - Core permission checking utilities
 **Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+- [x] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
+- [x] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
+- [x] Implementation completed
+- [x] Code Review completed (use `code-reviewer` agent)
+- [x] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
 **Success Criteria:**
-- [ ] `get_user_roles()` returns correct role sets for all user types
-- [ ] `require_roles()` dependency factory working for any role combination
-- [ ] Role inheritance logic functional (admin gets all permissions)
-- [ ] Comprehensive test coverage for all role scenarios
+- [x] `get_user_roles()` returns correct role sets for all user types
+- [x] `require_roles()` dependency factory working for any role combination
+- [x] Role inheritance logic functional (admin gets all permissions)
+- [x] Comprehensive test coverage for all role scenarios
 
 #### T123.5: Refactor Existing Auth Dependencies ✅ COMPLETE
 **Deliverable:** Updated auth system using new role framework
@@ -218,23 +218,23 @@ users table schema:
 **Goal:** User-friendly authentication interface
 **Dependencies:** F120 complete
 
-#### T131: Login Page Implementation
+#### T131: Login Page Implementation ✅ COMPLETE
 **Deliverable:** Professional login interface
 - Responsive login form with validation
 - Error handling and user feedback
 - Loading states during authentication
 - Password visibility toggle
 **Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+- [x] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
+- [x] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
+- [x] Implementation completed
+- [x] Code Review completed (use `code-reviewer` agent)
+- [x] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
 **Success Criteria:**
-- [ ] Login form functional and validated
-- [ ] Error messages clear and helpful
-- [ ] Loading states working
-- [ ] Mobile responsive design
+- [x] Login form functional and validated
+- [x] Error messages clear and helpful
+- [x] Loading states working
+- [x] Mobile responsive design
 
 #### T132: Authentication State Management
 **Deliverable:** Persistent auth state
