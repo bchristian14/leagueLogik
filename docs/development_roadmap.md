@@ -235,20 +235,7 @@ users table schema:
 - [x] Loading states working
 - [x] Mobile responsive design
 
-#### T132: Authentication State Management
-**Deliverable:** Persistent auth state
-- React Query for authentication state
-- Secure token storage strategy
-- Auto-logout on token expiration
-- Route protection implementation
-**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
-**Success Criteria:**
-- [ ] Auth state persists on refresh
-- [ ] Token expiration handled gracefully
-- [ ] Protected routes working
-- [ ] State management optimized
-
-#### T132.5: Frontend Testing Framework Setup
+#### T132.1: Frontend Testing Framework Setup ✅ COMPLETE
 **Deliverable:** Complete frontend testing infrastructure
 - Configure Vitest as test runner for React/TypeScript
 - Install and configure @testing-library/react for component testing
@@ -257,13 +244,13 @@ users table schema:
 - Create test utilities and setup files
 **Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:**
-- [ ] Vitest running tests successfully
-- [ ] @testing-library/react configured for component testing
-- [ ] Test scripts working (npm run test, npm run test:watch)
-- [ ] Coverage reporting functional with minimum 80% threshold
-- [ ] Test utilities and setup files ready for use
+- [x] Vitest running tests successfully
+- [x] @testing-library/react configured for component testing
+- [x] Test scripts working (npm run test, npm run test:watch, npm run test:coverage)
+- [x] Coverage reporting functional with minimum 80% threshold
+- [x] Test utilities and setup files ready for use
 
-#### T132.7: Backend Authentication API Tests
+#### T132.2: Backend Authentication API Tests
 **Deliverable:** Comprehensive backend authentication test suite
 - Unit tests for JWT token utilities (/app/utils/auth.py)
 - Integration tests for authentication API endpoints (/app/api/v1/auth.py)
@@ -278,7 +265,7 @@ users table schema:
 - [ ] Role-based access control tests for all permission patterns
 - [ ] Security tests (account lockout, failed attempts, password validation)
 
-#### T132.9: Frontend Authentication Tests
+#### T132.3: Frontend Authentication Tests
 **Deliverable:** Complete frontend authentication test coverage
 - Unit tests for useAuth hook (/frontend/src/hooks/useAuth.ts)
 - Tests for token storage utilities (/frontend/src/lib/auth.ts)
@@ -293,6 +280,19 @@ users table schema:
 - [ ] API client tested (token attachment, refresh interceptors, error mapping)
 - [ ] LoginPage component tested (form validation, submission, error display)
 - [ ] Route protection tested (authentication checks, role-based access, redirects)
+
+#### T132.4: Authentication State Management
+**Deliverable:** Persistent auth state
+- React Query for authentication state
+- Secure token storage strategy
+- Auto-logout on token expiration
+- Route protection implementation
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
+**Success Criteria:**
+- [ ] Auth state persists on refresh
+- [ ] Token expiration handled gracefully
+- [ ] Protected routes working
+- [ ] State management optimized
 
 #### T133: Admin Dashboard Shell
 **Deliverable:** Basic admin interface

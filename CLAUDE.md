@@ -94,6 +94,8 @@ npm install                              # Install dependencies
 npm run dev -- --host 0.0.0.0          # Start dev server (with network access)
 npm run build                           # Build for production (creates dist/)
 npm run test                            # Run tests
+npm run test:watch                      # Run tests in watch mode
+npm run test:coverage                   # Run tests with coverage report
 npm run lint                            # ESLint
 npm run typecheck                       # TypeScript checking
 ```
