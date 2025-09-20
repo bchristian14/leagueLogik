@@ -113,98 +113,84 @@ poetry run alembic upgrade head
 
 ## Development Workflow
 
-### Step 1: Plan Re-evaluation (MANDATORY)
-Before starting any task, re-evaluate the current plan:
+**Streamlined 8-Step Process for Task Execution:**
 
-```markdown
-## Plan Re-evaluation: [Task Name]
+### Step 1: Foundation Check
+**Purpose**: Ensure prerequisites are met before starting implementation
+- Use `architecture-validator` agent to validate dependencies and infrastructure
+- Confirm required services, databases, and tooling are available
+- User engagement if blockers are found that require decisions
+- **Output**: Clear go/no-go decision to proceed with implementation
 
-### Current Plan Validation
-- [ ] **Goal Alignment**: Does this task still align with overall project goals?
-- [ ] **Dependency Changes**: Have dependencies changed since plan creation?
-- [ ] **New Requirements**: Are there new requirements or insights from previous tasks?
-- [ ] **Scope Appropriateness**: Does the scope need adjustment based on learning?
-- [ ] **Technical Feasibility**: Technical constraints discovered that affect this task?
-- [ ] **Timeline Realism**: Is the estimated timeline still realistic?
+### Step 2: Implementation with Testing
+**Purpose**: Build the feature with comprehensive automated validation
+- Use domain-specific agents: `fastapi-backend-specialist`, `frontend-react-specialist`, `database-architect`
+- Implement production code following established patterns
+- Write automated tests during implementation (TDD where beneficial)
+- Ensure proper test coverage for business logic and API contracts
+- **Output**: Working feature with passing automated tests
 
-### Plan Updates Required
-- [ ] **Task Scope**: Modifications needed?
-- [ ] **Dependencies**: Added/removed/changed?
-- [ ] **Timeline**: Adjustments needed?
-- [ ] **Integration**: Changes to integration points?
+### Step 3: Code Review
+**Purpose**: Ensure consistency with established patterns and quality standards
+- Use `code-reviewer` agent to validate implementation
+- Check adherence to project conventions and coding standards
+- Verify security best practices and performance considerations
+- Identify any deviations from established patterns
+- **Output**: Validated code ready for user exploration
 
-### Updated Task Definition
-[Revised task description if changes needed]
+### Step 4: User Exploration
+**Purpose**: Real-world validation through direct user interaction
+- User explores the implemented feature directly (no demos)
+- Test feature functionality in realistic scenarios
+- Identify any usability issues or missing requirements
+- **Output**: User feedback on functionality and experience
 
-### Impact Assessment
-- Affects other tasks: [list]
-- Timeline impact: [estimated]
-- Resource impact: [estimated]
-```
+### Step 5: Iterative Fixes (if needed)
+**Purpose**: Address any issues discovered during user exploration
+- Use same domain-specific agents to implement fixes
+- Update tests to reflect any changes
+- Re-run code review for significant changes
+- **Output**: Refined feature addressing user feedback
 
-### Step 2: Pre-Task Evaluation (MANDATORY)
-After plan re-evaluation, create detailed task evaluation:
+### Step 6: Documentation Updates
+**Purpose**: Keep documentation current with minimal overhead
+- Update only what changed (avoid unnecessary documentation churn)
+- Prefer auto-generated API docs and inline component documentation
+- Update architectural decisions if significant patterns changed
+- **Output**: Current, minimal documentation
 
-```markdown
-## Task: [Task Name]
+### Step 7: Roadmap Update
+**Purpose**: Track completion and maintain project visibility
+- Mark task as complete in development roadmap
+- Update phase status if all tasks in a phase are done
+- Note any new tasks discovered during implementation
+- **Output**: Updated project tracking
 
-### Pre-Task Evaluation
-- [ ] **Requirements Clarity**: Any ambiguity that must be clarified?
-- [ ] **Architectural Impact**: New endpoints/components/database tables needed?
-- [ ] **Dependencies**: What existing code will be modified?
-- [ ] **Testing Strategy**: Unit tests + integration tests + user acceptance criteria
-- [ ] **Success Criteria**: Specific, measurable outcomes
+### Step 8: Commit and Push (when requested)
+**Purpose**: Persist changes with clear history
+- Create descriptive commit messages following project standards
+- Push changes to remote repository if requested
+- **Output**: Code changes safely persisted
 
-### Implementation Plan
-1. Database changes (if any)
-2. Backend API changes
-3. Frontend component changes
-4. Testing approach
-5. Documentation updates
+## Test-Driven Development (TDD) Guidelines
 
-### Risk Assessment
-- Breaking changes to existing functionality?
-- Migration considerations?
-- Dependencies on external services?
-```
+**Use TDD for:**
+- Business logic (handicap calculations, scoring algorithms, balance calculations)
+- API endpoints with clear input/output contracts
+- Complex data transformations
+- Financial transaction processing
 
-### Step 3: Implementation
-Execute the task using the updated plan and evaluation.
+**TDD Process:**
+1. Write failing test that describes expected behavior
+2. Implement minimal code to pass the test
+3. Refactor with confidence knowing tests will catch regressions
+4. Repeat for each piece of functionality
 
-### Step 4: Post-Task Validation (MANDATORY)
-After completing any task, validate with this checklist:
-
-```markdown
-## Task Completion: [Task Name]
-
-### Post-Task Validation
-- [ ] **Components Affected**: List all new/modified files
-- [ ] **Testing Completed**: Unit tests passing + manual testing done
-- [ ] **Success Criteria Met**: All requirements satisfied
-- [ ] **Documentation Updated**: API docs, component docs, README updates
-- [ ] **Code Quality**: Lint/type checks passing
-- [ ] **Database Migration**: Applied and tested if schema changes
-- [ ] **No Breaking Changes**: Existing functionality preserved
-- [ ] **Ready for Commit**: All validation complete
-
-### Test Results
-- Unit tests: [PASS/FAIL]
-- Integration tests: [PASS/FAIL]
-- Manual testing: [PASS/FAIL]
-- Linting: [PASS/FAIL]
-- Type checking: [PASS/FAIL]
-
-### Next Steps
-- Follow-up tasks identified?
-- Documentation updates needed?
-- Future enhancements noted?
-
-### Plan Updates for Future Tasks
-- [ ] **Lessons Learned**: What should inform future tasks?
-- [ ] **Plan Adjustments**: Do subsequent tasks need updating?
-- [ ] **New Dependencies**: Have new dependencies been created?
-- [ ] **Timeline Impact**: Does this affect future task estimates?
-```
+**Testing Strategy:**
+- **Unit Tests**: Business logic, utility functions, data models
+- **Integration Tests**: API endpoints, database operations
+- **Component Tests**: React components, user interactions
+- **Coverage Goal**: >90% for business logic, >80% overall
 
 ## Subagent Usage Guidelines
 

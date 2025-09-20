@@ -1,66 +1,93 @@
-# Workflow Checklist Template
+# Streamlined Development Workflow Checklist
 
 ## Task: [Task Name]
 
-### Step 1: Plan Re-evaluation  MANDATORY
-- [ ] **Plan Re-evaluation Completed**: Used `/docs/templates/plan_reevaluation.md`
-- [ ] **Goals still aligned**: Task still meets project objectives
-- [ ] **Dependencies validated**: All dependencies still valid
-- [ ] **Scope confirmed**: Task scope appropriate and realistic
-- [ ] **Ready for evaluation**: Proceed to Pre-Task Evaluation
+### Step 1: Foundation Check ✅
+**Agent**: `architecture-validator`
+- [ ] Dependencies validated (infrastructure, services, tooling)
+- [ ] No blockers preventing implementation
+- [ ] **Decision**: GO / NO-GO to proceed
 
-### Step 2: Pre-Task Evaluation  MANDATORY
-- [ ] **Pre-Task Evaluation Completed**: Used `/docs/templates/pre_task_evaluation.md`
-- [ ] **Requirements clarified**: All requirements clear and unambiguous
-- [ ] **Implementation planned**: Detailed implementation approach defined
-- [ ] **Testing strategy defined**: Clear testing approach established
-- [ ] **Ready for implementation**: Proceed to Implementation
+### Step 2: Implementation with Testing ✅
+**Agent**: Domain-specific (`fastapi-backend-specialist`, `frontend-react-specialist`, `database-architect`)
+- [ ] Production code implemented following established patterns
+- [ ] Automated tests written (TDD where beneficial for business logic)
+- [ ] All tests passing with adequate coverage
+- [ ] **Output**: Working feature with comprehensive test validation
 
-### Step 3: Implementation
-- [ ] **Implementation started**: Development work begun
-- [ ] **Code written**: Core functionality implemented
-- [ ] **Tests written**: Unit and integration tests created
-- [ ] **Manual testing**: Functionality manually verified
-- [ ] **Ready for validation**: Proceed to Post-Task Validation
+### Step 3: Code Review ✅
+**Agent**: `code-reviewer`
+- [ ] Code patterns and conventions validated
+- [ ] Security and performance considerations reviewed
+- [ ] Adherence to project standards confirmed
+- [ ] **Output**: Code approved for user exploration
 
-### Step 4: Post-Task Validation  MANDATORY
-- [ ] **Post-Task Validation Completed**: Used `/docs/templates/post_task_validation.md`
-- [ ] **Testing complete**: All tests passing
-- [ ] **Code quality verified**: Linting and type checking passed
-- [ ] **Documentation updated**: All docs updated appropriately
-- [ ] **Roadmap updated**: Task marked complete in development roadmap
-- [ ] **Ready for next task**: Task fully complete
+### Step 4: User Exploration 👤
+**User Action**: Direct feature testing (no demos)
+- [ ] Feature explored directly by user in realistic scenarios
+- [ ] Usability and functionality validated
+- [ ] User feedback collected
+- [ ] **Decision**: ACCEPT / NEEDS_FIXES
 
-## Additional Steps (As Appropriate)
+### Step 5: Iterative Fixes (if needed) 🔄
+**Agent**: Same domain-specific agent + code review for significant changes
+- [ ] User feedback addressed
+- [ ] Tests updated to reflect changes
+- [ ] Code re-reviewed if significant modifications made
+- [ ] **Return to Step 4** until user accepts
 
-### Architecture Review (For New Features/Significant Changes)
-- [ ] **Architecture review completed**: Used `architecture-validator` agent
-- [ ] **Design decisions validated**: Architecture choices confirmed
-- [ ] **Integration points verified**: System integration validated
+### Step 6: Documentation Updates 📝
+**Minimal, targeted updates only**
+- [ ] Changed functionality documented (prefer auto-generated API docs)
+- [ ] Inline component documentation updated
+- [ ] Architectural decisions recorded if patterns changed
 
-### Code Review (After Development)
-- [ ] **Code review completed**: Used `code-reviewer` agent
-- [ ] **Code quality confirmed**: Patterns and standards followed
-- [ ] **Security verified**: No security issues identified
+### Step 7: Roadmap Update 📊
+**Project tracking maintenance**
+- [ ] Task marked complete in development roadmap
+- [ ] Phase status updated if all tasks in phase completed
+- [ ] New tasks noted if discovered during implementation
 
-### Linting/Type Checking (MANDATORY per CLAUDE.md)
+### Step 8: Commit and Push (when requested) 💾
+**Version control**
+- [ ] Descriptive commit message following project standards
+- [ ] Changes pushed to remote repository if requested
+
+---
+
+## Quality Gates (MANDATORY)
+
+### Automated Testing
+- [ ] **Unit tests**: Business logic and utility functions (>90% coverage goal)
+- [ ] **Integration tests**: API endpoints and database operations
+- [ ] **Component tests**: React components and user interactions
+- [ ] **All tests passing**: No failing tests allowed
+
+### Code Quality (MANDATORY per CLAUDE.md)
 - [ ] **Backend linting**: `poetry run black .` passed
 - [ ] **Backend import sorting**: `poetry run isort .` passed
 - [ ] **Backend type checking**: `poetry run mypy .` passed
 - [ ] **Frontend linting**: `npm run lint` passed
 - [ ] **Frontend type checking**: `npm run typecheck` passed
 
-### Commits (When Explicitly Requested)
-- [ ] **Changes staged**: Relevant files added to git staging
-- [ ] **Commit message drafted**: Following project commit standards
-- [ ] **Commit created**: Changes committed with proper message
+---
+
+## Success Criteria
+- [ ] All automated tests passing
+- [ ] Code review approved with no pattern violations
+- [ ] User exploration completed successfully
+- [ ] Documentation current and minimal
+- [ ] Changes committed if requested
+
+**Task Status**: 🟢 COMPLETE | 🟡 IN-PROGRESS | 🔴 BLOCKED
 
 ---
 
-## Workflow Validation
-- [ ] **All mandatory steps completed**: Steps 1, 2, and 4 done
-- [ ] **All appropriate steps completed**: Additional steps as needed
-- [ ] **Task fully validated**: Ready to proceed to next task
-- [ ] **Documentation current**: All templates and roadmap updated
+## TDD Guidelines
+**Use Test-Driven Development for:**
+- Business logic (handicap calculations, scoring algorithms, balance calculations)
+- API endpoints with clear input/output contracts
+- Complex data transformations
+- Financial transaction processing
 
-**Task Status:**  COMPLETE / � IN-PROGRESS / L INCOMPLETE
+**TDD Process:** Write failing test → Implement minimal code → Refactor → Repeat

@@ -15,24 +15,23 @@ This roadmap uses a flexible numbering system designed for easy modification:
 4. Update dependencies in affected items
 5. Commit changes with clear description
 
-## Workflow Adherence
+## Streamlined Workflow Adherence
 
-**Each task must follow the documented workflow from CLAUDE.md:**
+**Each task follows the 8-step streamlined workflow from CLAUDE.md:**
 
-Tasks include a **Workflow** section with mandatory steps:
-- **Plan Re-evaluation** (mandatory) - Use `/docs/templates/plan_reevaluation.md`
-- **Pre-Task Evaluation** (mandatory) - Use `/docs/templates/pre_task_evaluation.md`
-- **Implementation** - Execute the development work
-- **Code Review** (for significant features) - Use `code-reviewer` agent
-- **Post-Task Validation** (mandatory) - Use `/docs/templates/post_task_validation.md`
+1. **Foundation Check** - `architecture-validator` agent validates dependencies
+2. **Implementation with Testing** - Domain-specific agents build with TDD
+3. **Code Review** - `code-reviewer` agent ensures pattern consistency
+4. **User Exploration** - Direct feature testing (no demos)
+5. **Iterative Fixes** - Address user feedback if needed
+6. **Documentation Updates** - Minimal, targeted updates
+7. **Roadmap Update** - Mark task complete
+8. **Commit/Push** - When requested
 
-**Workflow Templates Available:**
-- `/docs/templates/plan_reevaluation.md` - Plan validation before starting
-- `/docs/templates/pre_task_evaluation.md` - Detailed task planning
-- `/docs/templates/post_task_validation.md` - Completion validation
-- `/docs/templates/workflow_checklist.md` - Complete workflow tracking
+**Workflow Template Available:**
+- `/docs/templates/workflow_checklist.md` - Complete streamlined workflow tracking
 
-**Do not mark tasks complete until all workflow steps are validated.**
+**Tasks are complete when all 8 steps are validated and user accepts the implementation.**
 
 ---
 
@@ -242,12 +241,7 @@ users table schema:
 - Secure token storage strategy
 - Auto-logout on token expiration
 - Route protection implementation
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:**
 - [ ] Auth state persists on refresh
 - [ ] Token expiration handled gracefully
@@ -261,10 +255,7 @@ users table schema:
 - Setup jsdom environment for DOM testing
 - Configure test scripts in package.json (test, test:watch, test:coverage)
 - Create test utilities and setup files
-**Workflow:**
-- [ ] Pre-Task Evaluation completed
-- [ ] Implementation completed (use `frontend-react-specialist` agent)
-- [ ] Post-Task Validation completed (coverage and test execution verified)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:**
 - [ ] Vitest running tests successfully
 - [ ] @testing-library/react configured for component testing
@@ -279,10 +270,7 @@ users table schema:
 - Tests for API dependencies and role-based access (/app/api/dependencies.py)
 - Password change and token refresh endpoint tests
 - Account lockout and security feature tests
-**Workflow:**
-- [ ] Pre-Task Evaluation completed
-- [ ] Implementation completed (use `fastapi-backend-specialist` agent)
-- [ ] Post-Task Validation completed (coverage and test execution verified)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:**
 - [ ] >90% test coverage for authentication modules
 - [ ] All authentication API endpoints tested (login, logout, refresh, me, change-password)
@@ -297,10 +285,7 @@ users table schema:
 - API client integration tests (/frontend/src/lib/api.ts)
 - Component tests for LoginPage (/frontend/src/pages/LoginPage.tsx)
 - Route protection tests (ProtectedRoute component)
-**Workflow:**
-- [ ] Pre-Task Evaluation completed
-- [ ] Implementation completed (use `frontend-react-specialist` agent)
-- [ ] Post-Task Validation completed (coverage and test execution verified)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:**
 - [ ] >85% test coverage for authentication modules
 - [ ] useAuth hook tested (login, logout, state management, error handling)
@@ -315,12 +300,7 @@ users table schema:
 - Placeholder sections for future features
 - User profile display
 - Logout functionality
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:**
 - [ ] Dashboard accessible after login
 - [ ] Navigation structure clear
@@ -346,12 +326,7 @@ users table schema:
 - PUT /api/v1/members/{id} (update member data)
 - GET /api/v1/members/{id} (member details)
 - DELETE /api/v1/members/{id} (soft delete)
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:**
 - [ ] All CRUD operations functional
 - [ ] Filtering by status/type working
@@ -365,12 +340,7 @@ users table schema:
 - Member type progression rules
 - Balance calculation logic
 - Phone number formatting
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:**
 - [ ] All validation rules enforced
 - [ ] Business logic implemented
@@ -390,12 +360,7 @@ users table schema:
 - Basic member data display
 - Responsive table layout
 - Loading states
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:**
 - [ ] Member list displays correctly
 - [ ] All member data visible
@@ -408,12 +373,7 @@ users table schema:
 - Filter by member status and type
 - Filter by balance ranges
 - Clear filters functionality
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:**
 - [ ] Search returns accurate results
 - [ ] Filtering working efficiently
@@ -426,12 +386,7 @@ users table schema:
 - Pagination controls
 - Export to CSV functionality
 - Column visibility controls
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:**
 - [ ] Table sorting functional
 - [ ] Pagination working correctly
@@ -445,12 +400,7 @@ users table schema:
 - Form validation and error display
 - Member type change workflow
 - Balance adjustment interface
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:**
 - [ ] Forms validate correctly
 - [ ] Data saves successfully
@@ -463,12 +413,7 @@ users table schema:
 - Balance and transaction history
 - Member activity summary
 - Edit and action buttons
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:**
 - [ ] All member data displayed
 - [ ] Transaction history accurate
@@ -502,13 +447,7 @@ transactions table schema:
 - vendor_payee (text, for non-member transactions like course payments)
 - created_at (auto-managed)
 ```
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Transaction table created with constraints
 - [ ] Foreign key relationships established
@@ -521,13 +460,7 @@ transactions table schema:
 - Balance validation before transactions
 - Transaction rollback capabilities
 - Balance caching for performance
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Balance calculations accurate
 - [ ] Negative balance prevention
@@ -548,12 +481,7 @@ transactions table schema:
 - GET /api/v1/members/{id}/transactions (member transactions)
 - GET /api/v1/members/{id}/balance (current balance)
 - PUT /api/v1/transactions/{id} (admin corrections)
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] All transaction endpoints working
 - [ ] Admin-only access enforced
@@ -566,12 +494,7 @@ transactions table schema:
 - Transaction history viewer with filters
 - Financial reporting dashboard
 - Bulk transaction processing
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Deposit functionality working
 - [ ] Transaction history searchable
@@ -584,12 +507,7 @@ transactions table schema:
 - Personal transaction history
 - Balance insufficient warnings
 - Transaction detail views
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Balance displayed prominently
 - [ ] Transaction history accessible
@@ -641,13 +559,7 @@ holes table:
 - par (3|4|5)
 - stroke_index (1-18)
 ```
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] All course tables created
 - [ ] Relationships properly established
@@ -660,13 +572,7 @@ holes table:
 - Evaluate API availability and costs
 - Create course import strategy
 - Design manual course entry fallback
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] GHIN access options documented
 - [ ] Integration approach defined
@@ -696,13 +602,7 @@ seasons table:
 - side_game_defaults (JSON)
 - created_at, updated_at
 ```
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Season table created with constraints
 - [ ] JSON configurations validated
@@ -715,12 +615,7 @@ seasons table:
 - Season editing interface
 - Basic season information fields
 - Form validation and error handling
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Season creation working
 - [ ] Season editing functional
@@ -733,12 +628,7 @@ seasons table:
 - Payout schedules setup
 - Flight rules configuration
 - Side game defaults setup
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Point schedules configurable
 - [ ] Payout schedules working
@@ -751,12 +641,7 @@ seasons table:
 - Season copying functionality
 - Season archive management
 - Season status tracking
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Activation/deactivation working
 - [ ] Copying functionality operational
@@ -792,13 +677,7 @@ rounds table:
 - round_status (scheduled|cancelled|completed)
 - created_at, updated_at
 ```
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Round table created with constraints
 - [ ] Course relationships established
@@ -811,12 +690,7 @@ rounds table:
 - Round editing interface
 - Basic round information (date, time, course)
 - Form validation and error handling
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Round creation working
 - [ ] Round editing functional
@@ -829,12 +703,7 @@ rounds table:
 - Teebox assignment by member type
 - Course information display
 - Teebox validation rules
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Course selection working
 - [ ] Teebox assignments functional
@@ -847,12 +716,7 @@ rounds table:
 - Round status management (scheduled/cancelled/completed)
 - Fee configuration interface
 - Round capacity management
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Calendar view functional
 - [ ] Status changes working
@@ -881,13 +745,7 @@ round_signups table:
 - signup_status (confirmed|cancelled|waitlist)
 - created_at, updated_at
 ```
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Signup table with constraints
 - [ ] Unique constraints on round/member
@@ -901,12 +759,7 @@ round_signups table:
 - Signup deadline enforcement
 - Signup modification/cancellation
 - Waitlist management
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Fee calculation accurate
 - [ ] Balance validation working
@@ -919,12 +772,7 @@ round_signups table:
 - Tournament information display
 - Course and date information
 - Registration status indicators
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Schedule page informative
 - [ ] Tournament details clear
@@ -937,12 +785,7 @@ round_signups table:
 - Side game selection interface
 - Pairing and tee time preferences
 - Signup validation and error handling
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Signup process intuitive
 - [ ] Side game selection clear
@@ -955,12 +798,7 @@ round_signups table:
 - Payment confirmation workflow
 - Balance deduction processing
 - Signup status management
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Modification/cancellation working
 - [ ] Payment integration functional
@@ -986,12 +824,7 @@ round_signups table:
 - Handle candidate members separately
 - Flight balancing logic
 - Manual override capabilities
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Flights generated automatically
 - [ ] Handicap sorting accurate
@@ -1004,12 +837,7 @@ round_signups table:
 - Manual flight adjustments
 - Flight finalization process
 - Flight printing/export
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Flight display clear
 - [ ] Adjustments easy to make
@@ -1029,12 +857,7 @@ round_signups table:
 - Apply pairing requests from signups
 - Generate tee times or shotgun assignments
 - Tournament standings consideration
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Groupings appropriate
 - [ ] Pairing requests honored
@@ -1047,12 +870,7 @@ round_signups table:
 - Manual pairing adjustments
 - Tee sheet finalization
 - Printable format generation
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Tee sheet display clear
 - [ ] Adjustments intuitive
@@ -1089,13 +907,7 @@ scorecards table:
 - dq_reason (text)
 - created_at, updated_at
 ```
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Scorecard table complete
 - [ ] Score validation rules
@@ -1108,12 +920,7 @@ scorecards table:
 - Basic score entry (hole-by-hole)
 - Score validation (max score rules)
 - Save and auto-save functionality
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Score entry intuitive
 - [ ] Validation working correctly
@@ -1126,12 +933,7 @@ scorecards table:
 - Fairway hit tracking (par 4+)
 - Penalty tracking
 - Real-time score calculations
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Putt tracking working
 - [ ] Fairway tracking accurate
@@ -1144,12 +946,7 @@ scorecards table:
 - Score import functionality
 - Score correction interface
 - DQ flag and reason entry
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Bulk entry efficient
 - [ ] Import functionality working
@@ -1169,13 +966,7 @@ scorecards table:
 - Flight standings with playoffs
 - Tie-breaking procedures (scorecard playoffs)
 - Flight winner determination
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Net scores calculated correctly
 - [ ] Flight standings accurate
@@ -1188,13 +979,7 @@ scorecards table:
 - CTP (Closest to Pin) results
 - Low putts calculations
 - Deuces tracking and winners
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Skins calculated correctly
 - [ ] CTP results accurate
@@ -1207,13 +992,7 @@ scorecards table:
 - Prize money distribution calculations
 - Payout schedule application
 - Financial transaction generation
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Points allocation working
 - [ ] Prize distribution accurate
@@ -1226,12 +1005,7 @@ scorecards table:
 - Individual player scorecards
 - Net score calculations shown
 - Flight winner highlighting
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Flight results display clearly
 - [ ] Scorecards readable and accurate
@@ -1244,12 +1018,7 @@ scorecards table:
 - Skins results by hole
 - CTP and other side game results
 - Prize amounts for each game
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Side game winners clear
 - [ ] Skins results detailed
@@ -1262,12 +1031,7 @@ scorecards table:
 - Points leaderboard display
 - Results publication system
 - Historical results access
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Season standings accurate
 - [ ] Points tracking working
@@ -1300,13 +1064,7 @@ special_events table:
 - prize_structure (JSON)
 - active (boolean)
 ```
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Special events schema complete
 - [ ] Event types properly defined
@@ -1319,13 +1077,7 @@ special_events table:
 - Eligibility tracking (must play all 3 rounds)
 - Net score calculation across rounds
 - Leaderboard for 3-round aggregate
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] 3-round aggregation working correctly
 - [ ] Eligibility rules enforced
@@ -1338,13 +1090,7 @@ special_events table:
 - Separate gross and net competitions
 - Score updating logic (replace with better score)
 - Final ringers scorecard calculation
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Best score per hole tracking working
 - [ ] Gross/net competitions separate
@@ -1357,13 +1103,7 @@ special_events table:
 - Timeframe-based eligibility rules
 - No entry fee system (admin funded)
 - Special tournament designation
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Qualification tracking accurate
 - [ ] Eligibility rules enforced
@@ -1376,13 +1116,7 @@ special_events table:
 - Custom event type creation
 - Flexible prize structure configuration
 - Scoring rule engine
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Custom scoring configurable
 - [ ] New event types can be created
@@ -1419,13 +1153,7 @@ hio_winners table:
 - hole_number, distance
 - prize_amount, payout_date
 ```
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] HIO pool tracking complete
 - [ ] Entry management working
@@ -1450,13 +1178,7 @@ hio_winners table:
 - Basic server hardening and security
 - Network and firewall configuration
 - SSH access and user management
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] GCP instance operational
 - [ ] Server security configured
@@ -1469,13 +1191,7 @@ hio_winners table:
 - SSL certificate installation
 - HTTP to HTTPS redirection
 - Security headers configuration
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] nginx configuration correct
 - [ ] SSL certificates working
@@ -1488,13 +1204,7 @@ hio_winners table:
 - Application process management
 - Log file configuration
 - Service auto-start configuration
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Services auto-starting
 - [ ] Process management working
@@ -1507,13 +1217,7 @@ hio_winners table:
 - Environment configuration management
 - Database migration automation
 - Rollback procedures
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Deployment scripts working
 - [ ] Environment management automated
@@ -1526,13 +1230,7 @@ hio_winners table:
 - Backup verification and testing
 - Recovery procedures documentation
 - Backup retention policy
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Automated backups working
 - [ ] Backup verification functional
@@ -1545,13 +1243,7 @@ hio_winners table:
 - Resource usage tracking
 - Performance alerts and thresholds
 - Performance reporting dashboard
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Performance monitoring active
 - [ ] Resource tracking working
@@ -1564,13 +1256,7 @@ hio_winners table:
 - Configure secure environment variables
 - Implement credential rotation policies
 - Validate all security configurations
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:**
 - [ ] No default credentials in production
 - [ ] Environment variables properly configured
@@ -1583,13 +1269,7 @@ hio_winners table:
 - Error logging and alerting
 - Failed login attempt tracking
 - System health monitoring
-**Workflow:**
-- [ ] Plan Re-evaluation completed (`/docs/templates/plan_reevaluation.md`)
-- [ ] Pre-Task Evaluation completed (`/docs/templates/pre_task_evaluation.md`)
-- [ ] Implementation completed
-- [ ] Architecture Review completed (use `architecture-validator` agent)
-- [ ] Code Review completed (use `code-reviewer` agent)
-- [ ] Post-Task Validation completed (`/docs/templates/post_task_validation.md`)
+**Workflow:** Use streamlined 8-step process (see `/docs/templates/workflow_checklist.md`)
 **Success Criteria:
 - [ ] Security monitoring functional
 - [ ] Error alerting working
